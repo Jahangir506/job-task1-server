@@ -9,6 +9,18 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json())
 
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://job-task1-a443b.web.app/",
+      "https://job-task1-a443b.firebaseapp.com/",
+    ],
+    credentials: true,
+  })
+);
+app.use(express.json());
+
 const uri = `mongodb+srv://${process.env.db_USER}:${process.env.DB_PASS}@cluster0.ye7c1vr.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
