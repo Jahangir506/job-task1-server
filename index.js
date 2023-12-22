@@ -19,7 +19,6 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.db_USER}:${process.env.DB_PASS}@cluster0.ye7c1vr.mongodb.net/?retryWrites=true&w=majority`;
 
